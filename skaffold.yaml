@@ -1,12 +1,17 @@
 apiVersion: skaffold/v2beta11
 kind: Config
-build:
+build: 
   artifacts:
-  - image: skaffold-helm
+  - image: core.harbor.v2.hollysys.com/hollicube/skaffold-helm
 deploy:
   helm:
     releases:
     - name: skaffold-helm
       chartPath: charts
-      artifactOverrides:
-        image: skaffold-helm
+      namespace: default
+      remote: false
+      skipBuildDependencies: false
+      #setValues:
+      #  image.io.tag: v1.0
+      valuesFiles:
+      - values.yaml
