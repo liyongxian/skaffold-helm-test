@@ -3,6 +3,8 @@ kind: Config
 build: 
   artifacts:
   - image: core.harbor.v2.hollysys.com/hollicube/skaffold-helm
+    docker:
+      dockerfile: Dockerfile
 deploy:
   helm:
     releases:
