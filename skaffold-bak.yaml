@@ -10,6 +10,10 @@ deploy:
     releases:
     - name: skaffold-helm
       chartPath: charts
-      namespace: projectName
+      namespace: default
+      remote: false
+      skipBuildDependencies: false
+      #setValues:
+      #  image.io.tag: v1.0
       valuesFiles:
       - values.yaml
