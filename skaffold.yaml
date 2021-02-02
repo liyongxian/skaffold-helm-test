@@ -9,7 +9,6 @@ deploy:
   helm:
     releases:
     - name: skaffold-helm
-      chartPath: charts
-      namespace: projectName
+      chartPath: hiaclou-io
       valuesFiles:
       - values.yaml
