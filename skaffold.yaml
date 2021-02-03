@@ -5,10 +5,11 @@ build:
   - image: core.harbor.v2.hollysys.com/hollicube/skaffold-helm
     docker:
       dockerfile: Dockerfile
+      noCache: false
 deploy:
   helm:
     releases:
     - name: skaffold-helm
-      chartPath: hiaclou-io
+      chartPath: charts 
       valuesFiles:
       - values.yaml
